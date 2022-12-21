@@ -245,7 +245,7 @@ typedef struct {
     uint32_t ident;
     uint8_t DLC;
     uint8_t padding[3];
-    uint8_t data[16];
+    uint8_t data[8];
 } CO_CANrxMsg_t;
 
 /* Access to received CAN message */
