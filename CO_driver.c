@@ -312,7 +312,7 @@ CO_ReturnError_t CO_CANmodule_addInterface(CO_CANmodule_t *CANmodule,
     }
 
     /* enable socket rx queue overflow detection */
-    tmp = 2;
+    tmp = 1;
     ret = setsockopt(interface->fd, SOL_SOCKET, SO_RXQ_OVFL, &tmp, sizeof(tmp));
     if(ret < 0){
         log_printf(LOG_DEBUG, DBG_ERRNO, "setsockopt(ovfl)");
