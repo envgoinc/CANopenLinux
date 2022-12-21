@@ -312,12 +312,12 @@ CO_ReturnError_t CO_CANmodule_addInterface(CO_CANmodule_t *CANmodule,
     }
 
     /* enable socket rx queue overflow detection */
-    // tmp = 1;
-    // ret = setsockopt(interface->fd, SOL_SOCKET, SO_RXQ_OVFL, &tmp, sizeof(tmp));
-    // if(ret < 0){
-    //     log_printf(LOG_DEBUG, DBG_ERRNO, "setsockopt(ovfl)");
-    //     return CO_ERROR_SYSCALL;
-    // }
+    tmp = 0;
+    ret = setsockopt(interface->fd, SOL_SOCKET, SO_RXQ_OVFL, &tmp, sizeof(tmp));
+    if(ret < 0){
+        log_printf(LOG_DEBUG, DBG_ERRNO, "setsockopt(ovfl)");
+        return CO_ERROR_SYSCALL;
+    }
 
     /* enable software time stamp mode (hardware timestamps do not work properly
      * on all devices)*/
