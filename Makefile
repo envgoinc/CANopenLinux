@@ -3,7 +3,7 @@
 
 DRV_SRC = .
 CANOPEN_SRC = CANopenNode
-APPL_SRC = CANopenNode/example
+APPL_SRC = ./pi-pickerel
 
 
 LINK_TARGET = canopend

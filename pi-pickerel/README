@@ -1,0 +1,33 @@
+## Pi Pickerel Code
+
+*This folder has the necessary object dictionary and .xpd file to make and run a linux device that can emulate the motor controller*
+
+### Command for running CANLinux:
+
+```bash
+canopend can0 -i 1 -c "local-/tmp/CO_command_socket"
+```
+
+### To Recompile the code:
+1. go to CANOpenLinux: 
+```bash
+cd dev/CANOpenLinux 
+```
+2. run make:  
+```bash
+make 
+```
+3. run install: 
+```bash
+sudo make install
+```
+
+### To get CANOpenLinux out of pre-operation:
+1. go to the pi-pickerel file
+```bash
+cd dev/CANOpenLinux/pi-pickerel
+```
+2. run file
+```bash
+./reset_can_linux.sh
+```
